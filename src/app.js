@@ -19,7 +19,7 @@ app.post('/api/projects', (req, res) => {
     const {title, description} = req.body;
 
     if(!title || !description){
-        return res.sendStatus(400);
+        return res.sendStatus(400);   
     }
 
     res.json({

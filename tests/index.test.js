@@ -8,4 +8,10 @@ describe('GET /api/projects', ()=> {
         expect(response.statusCode).toBe(200);
     })
 
+    test('shoud respond a array', async () => {
+        const response = await request(app).get('/api/projects').send();
+
+        expect(response.body).toBeInstanceOf(Array);
+    })
+
 })

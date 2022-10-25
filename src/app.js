@@ -17,6 +17,11 @@ app.get('/api/projects', (req, res) => {
 
 app.post('/api/projects', (req, res) => {
     const {title, description} = req.body;
+
+    if(!title || !description){
+        return res.sendStatus(400);
+    }
+
     res.json({
         id: v4(),
         title,
